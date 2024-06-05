@@ -31,3 +31,4 @@ function findMedian(arr) {
   let sortarr = arr.sort((a, b) => a - b);
   return sortarr[Math.floor(sortarr.length / 2)];
 }
+ 
