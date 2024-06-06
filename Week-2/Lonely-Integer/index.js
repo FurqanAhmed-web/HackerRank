@@ -35,7 +35,7 @@ function lonelyinteger(a) {
   // Count the occurrences of each element
   a.forEach(value => {
     if (!elementCounts[value]) {
-      elementCounts[value] = 1;
+      elementCounts[value] = 1; 
     } else {
       elementCounts[value]++;
     }
