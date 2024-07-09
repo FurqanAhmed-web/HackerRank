@@ -23,41 +23,35 @@ function readLine() {
 }
 
 /*
- * Complete the 'pickingNumbers' function below.
+ * Complete the 'kangaroo' function below.
  *
- * The function is expected to return an INTEGER.
- * The function accepts INTEGER_ARRAY a as parameter.
+ * The function is expected to return a STRING.
+ * The function accepts following parameters:
+ *  1. INTEGER x1
+ *  2. INTEGER v1
+ *  3. INTEGER x2
+ *  4. INTEGER v2
  */
 
-function pickingNumbers(a) {
-  // Create a frequency array to count the occurrences of each number
-  let freq = new Array(101).fill(0);
+function kangaroo(x1, v1, x2, v2) {
+    // Write your code here
 
-  // Populate the frequency array
-  for (let num of a) {
-    freq[num]++;
-  }
-
-  let maxLen = 0;
-
-  // Find the maximum length of a subarray where the absolute difference between
-  // any two elements is less than 2
-  for (let i = 1; i < 101; i++) {
-    maxLen = Math.max(maxLen, freq[i] + freq[i - 1]);
-  }
-
-  return maxLen;
 }
-
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
-    const n = parseInt(readLine().trim(), 10);
+    const firstMultipleInput = readLine().replace(/\s+$/g, '').split(' ');
 
-    const a = readLine().replace(/\s+$/g, '').split(' ').map(aTemp => parseInt(aTemp, 10));
+    const x1 = parseInt(firstMultipleInput[0], 10);
 
-    const result = pickingNumbers(a);
+    const v1 = parseInt(firstMultipleInput[1], 10);
+
+    const x2 = parseInt(firstMultipleInput[2], 10);
+
+    const v2 = parseInt(firstMultipleInput[3], 10);
+
+    const result = kangaroo(x1, v1, x2, v2);
 
     ws.write(result + '\n');
 
